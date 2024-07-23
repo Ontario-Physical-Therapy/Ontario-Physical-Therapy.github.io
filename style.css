@@ -1,0 +1,96 @@
+html {
+	margin: 0px;
+	padding: 0px;
+	max-width: 90%;
+	overflow-x: visible;
+}
+.glennText {
+width: calc(100% - 230px);
+
+}
+body {
+	margin: 5px;
+	padding: 5px;
+	min-height: 100%;
+	font-family: arial, sans-serif;
+	font-size: 12px;
+	background-image: url("./background.png");
+	background-repeat: no-repeat;
+}
+
+.nav {
+	position: relative;
+	top: 86px;
+	left: 125px;
+	border-style: none;
+	font: bold 11pt Verdana, sans-serif;
+	padding: 2px;
+	margin: 0px;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.nav a,
+.nav a:visited {
+	position: relative;
+	margin-left: 10px;
+	float: left;
+	height: 26px;
+	width: 100px;
+	background-image: url("./button.png");
+	background-repeat: no-repeat;
+	text-align: center;
+	vertical-align: middle;
+	color: #DDFFFF;
+	text-decoration: none;
+}
+
+.nav a:hover,
+.nav a:active {
+	position: relative;
+	margin-left: 10px;
+	width: 100px;
+	float: left;
+	height: 26px;
+	background-image: url("./buttonSelected.png");
+	background-repeat: no-repeat;
+	text-align: center;
+	vertical-align: middle;
+	color: #DDFFFF;
+	text-decoration: none;
+}
+
+#pageBody {
+	position: relative;
+	top: 76px;
+	left: 134px;
+	max-width: 90vw;
+	margin-left: 15px;
+}
+
+p.sub {
+	position: relative;
+	left: 20px;
+}
+
+div.Line {
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
+	height: 2px;
+	width: 300px;
+	max-width: calc(80%);
+	background-color: #007E31;
+}
+
+#Footer {
+	text-align: center;
+}
+
+#pageBody {
+display: flex;
+flex-direction: column;
+}
+.form {
+	align-self: center;
+}

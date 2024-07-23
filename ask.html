@@ -1,0 +1,232 @@
+<?php 
+if(isset($_POST['submit'])){
+    $to = "ryan.m.posey@gmail.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $name = $_POST['name'];
+    $subject = "Q+A";
+    $message = $name . " wrote the following:" . "\n\n" . $_POST['message'];
+    $headers = "From:" . $from;
+    mail($to,$subject,$message,$headers);
+    echo "Mail Sent."
+    }
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ontario Physical Therapy | Ask the PT</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="./ruffle.js.download"></script>
+    <style type="text/css">
+        div#commentForm1 {
+            margin: 0px 20px 0px 20px;
+            display: none;
+        }
+
+        div#commentForm2 {
+            margin: 0px 20px 0px 20px;
+            display: none;
+        }
+
+        a.showAnswer {
+            position: relative;
+            left: 20px;
+            text-decoration: none;
+            color: #00AC36;
+        }
+    </style>
+</head>
+<script type="text/javascript">
+    function toggleLayer(whichLayer) {
+        if (document.getElementById) {
+            // this is the way the standards work
+            var style2 = document.getElementById(whichLayer).style;
+            style2.display = style2.display ? "" : "block";
+        }
+        else if (document.all) {
+            // this is the way old msie versions work
+            var style2 = document.all[whichLayer].style;
+            style2.display = style2.display ? "" : "block";
+        }
+        else if (document.layers) {
+            // this is the way nn4 works
+            var style2 = document.layers[whichLayer].style;
+            style2.display = style2.display ? "" : "block";
+        }
+    }
+
+    function UnCryptMailto(s) {
+        var n = 0;
+        var r = "";
+        for (var i = 0; i < s.length; i++) {
+            n = s.charCodeAt(i);
+            if (n >= 8364) {
+                n = 128;
+            }
+            r += String.fromCharCode(n - 1);
+        }
+        return r;
+    }
+
+    function linkTo_UnCryptMailto(s) {
+        location.href = UnCryptMailto(s);
+    }
+
+    function emailValidator(elem, helperMsg) {
+        var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+        if (elem.value.match(emailExp)) {
+            return true;
+        }
+        else {
+            alert(helperMsg);
+            elem.focus();
+            return false;
+        }
+    }
+</script>
+
+<body>
+    <div class="nav">
+        <a href="./index.html">Home</a>
+        <a href="./ask.html">Ask the PT</a>
+        <a href="./articles.html">Articles</a>
+        <a href="./links.html">Links</a>
+        <a href="./about.html">About Us</a>
+        <a href="./contact.html">Contact</a>
+    </div>
+    <div id="pageBody">
+        <h3 style="text-align: center;">Questions</h3>
+
+        <h4>Q:</h4>
+        <p class="sub">I am an 82 year old woman with arthritis in my hand. Is it all right to continue to use a three
+            pound weight in my three times a week exercise class?</p>
+        <h4>A: <a class="showAnswer" href="javascript:toggleLayer(&#39;commentForm1&#39;);">Show Answer</a></h4>
+        <div id="commentForm1">
+            <p class="sub">The first question to ask when exercising with arthritis is "do I hurt afterward in my
+                joints?" Exercise has been shown to help people with arthritis by improving joint nutrition and blood
+                flow. However, there is a fine line between exercising enough to help the joint and causing
+                inflammation.</p>
+            <p class="sub">In severe arthritic conditions such as rheumatoid arthritis or advanced osteoarthritis, the
+                prolonged inflammation causes weakening of the joint's support structures (ligaments, tendons and joint
+                capsule). The weakened joint is then prone to becoming deformed (especially in the fingers).</p>
+            <p class="sub">If using a three pound weight in the hand is causing the hand to hurt or swell after
+                exercise, then I would suggest changing the exercise. Suggestions include using a "cuff" weight that
+                straps to the wrist and takes the force off the hand. Another suggestion would be to experiment with a
+                weight with a larger grip that is easier to grasp. Lastly, there are also weighted gloves that can be
+                worn but these are harder to come by.</p>
+            <p class="sub">Studies have shown that resistive or strengthening exercises can benefit the elderly by
+                maintaining or improving muscle strength, coordination, function and especially by helping maintain bone
+                integrity. However, general group exercise programs often have a "one size fits none" aspect to them. If
+                you have concerns whether a specific exercise program can safely meet your needs, please see a health
+                care specialist such as a physical therapist who can evaluate you and make specific exercise
+                recommendations.</p>
+            <p class="sub">Thank you,</p>
+            <p class="sub">Glenn Dodge DPT</p>
+        </div>
+
+        <h4>Q:</h4>
+        <p class="sub">My back has been hurting. How would you be able to help me (versus) going to a chiropractor?</p>
+        <h4>A: <a class="showAnswer" href="javascript:toggleLayer(&#39;commentForm2&#39;);">Show Answer</a></h4>
+        <div id="commentForm2">
+            <p class="sub">First let me say that the quality of medical services always comes down to the expertise and
+                experience of the individual practitioner. So the efficacy of chiropractic services or physical therapy
+                services often depends on the skills of the individual chiropractor or therapist.</p>
+            <p class="sub">Both chiropractic care and physical therapy can improve patients with back pain. I work
+                closely with chiropractors and receive a number of patients from them. Both chiropractors and physical
+                therapists utilize spinal mobilization and/or manipulation to improve patients with back pain. In the
+                field of physical therapy, there is scientific evidence supporting the use of spinal mobilization for
+                certain types of back conditions.
+                However, since I am not a chiropractor, I am reluctant to try to speak to the whole of chiropractic
+                philosophy, so I will try to explain how a physical therapist would approach a patient with back pain.
+            </p>
+            <p class="sub">The most important aspect of treatment is the physical therapy evaluation. The therapist uses
+                a whole range of tests and measures to determine the root cause of the problem and potential treatments.
+                Back pain can originate from multiple sources. It can be referred from internal organs such as the
+                bladder, kidneys or even the heart. It can also result from infection of the spine (a condition called
+                diskitis). In cases where the therapist feels the pain does not originate from a musculoskeletal
+                disorder, a referral to a medical physician is in order. </p>
+            <p class="sub">If the back pain is from a musculoskeletal origin, multiple structures can be involved. Pain
+                can originate from vertebral displacement/malalignment, disc irritation or herniation, muscle strain,
+                nerve root compression or irritation, ligament sprain, or some combination of the above. Once the
+                painful structures are identified, the next step is to identify the CAUSE of the irritation. In cases
+                involving trauma (such as car accidents), the cause is usually easily identified. However, in chronic
+                cases in which the patient has several episodes of back pain, the cause can be hard to discern. A
+                classic case of this is the patient who has to go several times to a clinician to have their back put
+                back in. The question I try to answer is why does it go out in the first place? and then how can we keep
+                this in? or at least teach the patient a way to manage these episodes at home before the pain becomes
+                excruciating. In most chronic cases, the problem is a muscle tightness or weakness that allows the
+                vertebrae, or other structures to move or become irritated while doing an activity (like prolonged
+                standing). In these cases, studies show that addressing the muscle imbalance with specific stretching
+                and strengthening will decrease chronic back pain and decrease the chances of continued back problems.
+                In my experience, the approach of reducing the initial cause of irritation coupled with improving the
+                surrounding supporting structures offers the client the best chance at long term relief.</p>
+            <p class="sub">Now that all the technical jargon is aside lets some it all up.
+            </p>
+            <ol>
+                <li>Discover the root cause of the pain!</li>
+                <li>If it can be fixed.fix it!</li>
+                <li>After you fix it do something to keep it fixed!</li>
+                And this is where Physical Therapy really shines
+                <li>If it cant be fixedimprove the other areas (posture, muscles, ligaments etc) to compensate for the
+                    bad part so you can get back to living!</li>
+                <p></p>
+            </ol>
+        </div>
+
+        <br>
+        <div class="Line"></div><br>
+        <p>Any other questions? Feel free to contact us at  or by using the form below.</p>
+        <div class="form">
+            <form method="post" action="">
+                <table style="width: 300px; height: 350px;">
+                    <tbody>
+                        <tr>
+                            <td width="30%" style="text-align: right;">
+                                <p>Your name:</p>
+                            </td>
+                            <td><input type="text" name="name" maxlength="50"></td>
+                        </tr>
+                        <tr>
+                            <td width="30%" style="text-align: right;">
+                                <p>Your email address:</p>
+                            </td>
+                            <td><input type="text" name="email"
+                                    onchange="emailValidator(document.getElementById(&#39;email&#39;), &#39;Not a Valid Email Address&#39;)"
+                                    id="email" maxlength="50"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Question:</p>
+                            </td>
+                        </tr>
+                        <tr style="height: 150px;">
+                            <td colspan="2">
+                                <textarea rows="8" cols="30" wrap="virtual" name="question" spellcheck="false"
+                                    data-ms-editor="true">Enter your question here</textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: center;">
+                                <p style="font-weight: bold;">Don't forget to put your full email address!</p><input
+                                    type="submit" name="Submit" value="Submit">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+
+        <div class="Line"></div>
+        <br>
+        <div id="Footer">
+            <p> &copy; 2006 Ontario Physical Therapy</p>
+            <br>
+            <p>Problems with the site? Please report them to </p>
+        </div>
+
+    </div>
+</body>
+
+</html>
